@@ -25,7 +25,7 @@ const HeaderIcon: React.SFC = () => {
         display: inline-block;
         background: url("https://user-images.githubusercontent.com/41350459/79749898-f8033600-834a-11ea-973e-989ebcba431f.png");
         background-position: ${props => props.position};
-        margin: 0 3px;
+        margin: 0 5px;
         &:hover{
         background-position-x : -60px;
         }

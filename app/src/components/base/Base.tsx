@@ -51,25 +51,12 @@ export const Wrap = styled.div`
     width: 100%;
 `;
 
-
-
 /* Contents */
 export const Contents = styled.div`
 
 `;
 
 
-
-export const Cont_Ban = styled.div`
-
-    height: 200px;
-    background: #555;
-`;
-export const Cont_Cont = styled.div`
-
-    height: 200px;
-    background: #666;
-`;
 
 /* Footer */
 export const Footer = styled.div`

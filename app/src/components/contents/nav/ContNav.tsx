@@ -34,6 +34,7 @@ const ContNav: React.SFC = () => {
             
         }       
     `;
+
     return (
         <Nav>
             <div>
