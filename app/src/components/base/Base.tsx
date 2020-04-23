@@ -4,7 +4,6 @@ export const GlobalStyle = createGlobalStyle`
     body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset, legend, p, select, table, th, td, tr, textarea, button, form {
       padding: 0;
       margin: 0;
-      box-sizing: border-box;
     }
     a{
       color: #222;
@@ -18,6 +17,10 @@ export const GlobalStyle = createGlobalStyle`
       color: #222;
       font-size: 13px;
       line-height: 1.5;
+    }
+    /* 폰트 스타일 초기화 */
+    em {
+      font-style: normal
     }
     /* 불릿 기호 초기화 */
     dl, ul, li, ol, menu {

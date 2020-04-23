@@ -5,7 +5,7 @@ import {
     GlobalStyle, Wrap, Container,
     Contents, Footer, 
 } from '../components/base/Base';
-import { Header, Menu, Title, Banner, Notice } from '../container/home';
+import { Header, Menu, Title, Banner, Notices } from '../container/home';
 class Home extends Component {
     render() {
         return (
@@ -18,7 +18,7 @@ class Home extends Component {
                         <Menu/>
                         <Title/>
                         <Banner/>
-                        <Notice/>
+                        <Notices/>
                     </Contents>
 
                     <Footer>
