@@ -5,43 +5,47 @@ import { IR } from '../../../base/Base';
 
 const ir = new IR();
 const PM = ir.PM;
+const Wrapper = styled.div`
+    position: relative;
+    margin-top: 15px;
+    & h4{
+        font-size: 14px;
+        color: #0093bd; 
+        padding: 0 0 3px 0;
+        font-weight: bold;
+    }
+    & li{
+        display: flex;
+        justify-content: space-between;
+        background: url("https://user-images.githubusercontent.com/41350459/80065043-6bd45700-8574-11ea-8c34-b555d66bd1d1.gif") no-repeat 0 8px;
+        padding-left: 8px;
+        font-size: 12px;
+        & a{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 65%;
+            &:hover {
+                color: #390;
+            }
+        }
+        & span {
+            width: 30%;
+            text-align: right;
+        }
+    }
+`;
+const More = styled.a`
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    background:url("https://user-images.githubusercontent.com/41350459/79749898-f8033600-834a-11ea-973e-989ebcba431f.png") no-repeat -150px -90px;
+    width: 17px;
+    height: 17px;
+`;
 const Notice2: React.SFC = () => {
-    const Wrapper = styled.div`
-        position: relative;
-        margin-top: 15px;
-        & h4{
-            font-size: 14px;
-            color: #0093bd; 
-            padding: 0 0 3px 0;
-            font-weight: bold;
-        }
-        & li{
-            display: flex;
-            justify-content: space-between;
-            background: url("https://user-images.githubusercontent.com/41350459/80065043-6bd45700-8574-11ea-8c34-b555d66bd1d1.gif") no-repeat 0 8px;
-            padding-left: 8px;
-            font-size: 12px;
-            & a{
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                width: 65%;
-            }
-            & span {
-                width: 30%;
-                text-align: right;
-            }
-        }
-    `;
-    const More = styled.a`
-        position: absolute;
-        right: 0;
-        top: 0;
-        display: block;
-        background:url("https://user-images.githubusercontent.com/41350459/79749898-f8033600-834a-11ea-973e-989ebcba431f.png") no-repeat -150px -90px;
-        width: 17px;
-        height: 17px;
-    `;
+    
     return (
         <Wrapper>
             <h4>Web Designer Notice</h4>

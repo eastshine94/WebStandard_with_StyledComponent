@@ -1,39 +1,39 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import styled from 'styled-components';
+const Nav = styled.div`
+    overflow:hidden;
+    padding: 30px 0;
+    & > div {
+        float: left;
+        width: 40%;
+        & h3 {
+            font-size: 18px;
+            color: #25a2d0;
+            margin-bottom: 4px;
+        }
 
-const ContNav: React.SFC = () => {
-    const Nav = styled.div`
-        overflow:hidden;
-        padding: 30px 0;
-        & > div {
+        & ol{
+            overflow: hidden;   
+        }
+        & ol li{
             float: left;
-            width: 40%;
-            & h3 {
-                font-size: 18px;
-                color: #25a2d0;
-                margin-bottom: 4px;
+            width: 50%;
+            & a:hover{
+                text-decoration: underline;         
+                color: #390;
             }
-
-            & ol{
-                overflow: hidden;   
-            }
+        }
+        &:last-child{
+            width: 20%;
             & ol li{
-                float: left;
-                width: 50%;
-                & a:hover{
-                    text-decoration: underline;
-                }
+                width: 100%;
             }
-            &:last-child{
-                width: 20%;
-                & ol li{
-                    width: 100%;
-                }
-            }
-            
-        }       
-    `;
+        }
+    }       
+`;
+const ContNav: React.SFC = () => {
+    
 
     return (
         <Nav>

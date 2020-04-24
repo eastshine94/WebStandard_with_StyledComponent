@@ -8,9 +8,6 @@ export const GlobalStyle = createGlobalStyle`
     a{
       color: #222;
       text-decoration:none;
-      &:hover {
-        color: #390;
-      }
     }
     body, input, textarea, select, button, table {
       font-family: 'Nanum Gothic', sans-serif;

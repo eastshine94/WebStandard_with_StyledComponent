@@ -5,49 +5,50 @@ import { IR } from '../../../base/Base';
 
 const ir = new IR();
 const SU = ir.SU;
-const Notice2: React.SFC = () => {
-    const Wrapper = styled.div`
-        & ul{
-            display: flex;
-            justify-content: space-between;
-        }
-        & li {
-            width: 93px;
-            text-align:center;
-            & a{
-                & span{
-                    position: relative;
-                    display: block;
-                    width: 93px;
-                    height: 93px;
-                    &:hover em{
-                        visibility: visible;
-                    }
+const Wrapper = styled.div`
+    & ul{
+        display: flex;
+        justify-content: space-between;
+    }
+    & li {
+        width: 93px;
+        text-align:center;
+        & a{
+            & span{
+                position: relative;
+                display: block;
+                width: 93px;
+                height: 93px;
+                &:hover em{
+                    visibility: visible;
+                }
 
-                    & img{
-                        width:100%;
-                    }
-                    & em{
-                        visibility: hidden;
-                        position: absolute;
-                        left: 0;
-                        bottom: 0;
-                        background: rgba(0,0,0,0.7);
-                        color: #fff;
-                        width: 100%;
-                    }
+                & img{
+                    width:100%;
                 }
-                & strong{
-                    padding-top: 3px;
-                    font-size: 12px;
-                    display: inline-block;
+                & em{
+                    visibility: hidden;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    background: rgba(0,0,0,0.7);
+                    color: #fff;
+                    width: 100%;
                 }
             }
-            & + li{
-                margin-left: 5px;
+            & strong{
+                padding-top: 3px;
+                font-size: 12px;
+                display: inline-block;
             }
         }
-    `;
+        & + li{
+            margin-left: 5px;
+        }
+    }
+`;
+const Notice2: React.SFC = () => {
+    
     return (
 
         <Wrapper>

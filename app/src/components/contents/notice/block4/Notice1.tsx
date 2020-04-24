@@ -1,63 +1,63 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import styled from 'styled-components';
+const Wrapper = styled.div`
+    & + div {
+        margin-top: 15px;
+    }
+    & h4{
+        font-size: 14px;
+        color: #0093bd; 
+        padding: 0 0 3px 0;
+        font-weight: bold;
+        
+    }
+    & ul{
+        display: flex;
+        justify-content: space-between;
+    }
+    & li {
+        width: 93px;
+        text-align:center;
+        & a{
+            & span{
+                position: relative;
+                display: block;
+                width: 93px;
+                height: 93px;
 
+                &:hover em{
+                    visibility: visible;
+                }
+
+                & img{
+                    width:100%;
+                }
+                & em{
+                    visibility: hidden;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background: rgba(0,0,0,0.7);
+                    color: #fff;
+                    width: 100%;
+                    height: 100%;
+                    line-height: 93px;
+                }
+            }
+            & strong{
+                padding-top: 3px;
+                font-size: 12px;
+                display: inline-block;
+            }
+        }
+        & + li{
+            margin-left: 5px;
+        }
+    }
+`;
 const Notice1: React.SFC = () => {
-    const Wrapper = styled.div`
-        & + div {
-            margin-top: 15px;
-        }
-        & h4{
-            font-size: 14px;
-            color: #0093bd; 
-            padding: 0 0 3px 0;
-            font-weight: bold;
-            
-        }
-        & ul{
-            display: flex;
-            justify-content: space-between;
-        }
-        & li {
-            width: 93px;
-            text-align:center;
-            & a{
-                & span{
-                    position: relative;
-                    display: block;
-                    width: 93px;
-                    height: 93px;
-
-                    &:hover em{
-                        visibility: visible;
-                    }
-
-                    & img{
-                        width:100%;
-                    }
-                    & em{
-                        visibility: hidden;
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        background: rgba(0,0,0,0.7);
-                        color: #fff;
-                        width: 100%;
-                        height: 100%;
-                        line-height: 93px;
-                    }
-                }
-                & strong{
-                    padding-top: 3px;
-                    font-size: 12px;
-                    display: inline-block;
-                }
-            }
-            & + li{
-                margin-left: 5px;
-            }
-        }
-    `;
+    
     return (
 
         <Wrapper>

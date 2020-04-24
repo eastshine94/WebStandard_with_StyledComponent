@@ -5,51 +5,54 @@ import { IR } from '../../../base/Base';
 
 const ir = new IR();
 const PM = ir.PM;
-const Notice: React.SFC = () => {
-    const Wrapper = styled.div`
+const Wrapper = styled.div`
+    position: relative;
+    & h4{
+        font-size: 14px;
+        color: #0093bd; 
+        padding: 0 0 3px 0;
+        font-weight: bold;
+    }
+    & li {
         position: relative;
-        & h4{
-            font-size: 14px;
-            color: #0093bd; 
-            padding: 0 0 3px 0;
-            font-weight: bold;
+        padding: 8px 0 14px 60px;
+        & a:hover {
+                color: #390;
         }
-        & li {
-            position: relative;
-            padding: 8px 0 14px 60px;
+        & img{
+            width: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 1px solid #0093bd;
+        }
+        & strong{
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
             
-            & img{
-                width: 50px;
-                position: absolute;
-                top: 0;
-                left: 0;
-                border: 1px solid #0093bd;
-            }
-            & strong{
-                display: block;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                
-            }
-            & span{
-                display: block;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                font-size: 12px;
-            }
         }
-    `;
-    const More = styled.a`
-        position: absolute;
-        right: 0;
-        top: 0;
-        display: block;
-        background:url("https://user-images.githubusercontent.com/41350459/79749898-f8033600-834a-11ea-973e-989ebcba431f.png") no-repeat -150px -90px;
-        width: 17px;
-        height: 17px;
-    `;
+        & span{
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 12px;
+        }
+    }
+`;
+const More = styled.a`
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    background:url("https://user-images.githubusercontent.com/41350459/79749898-f8033600-834a-11ea-973e-989ebcba431f.png") no-repeat -150px -90px;
+    width: 17px;
+    height: 17px;
+`;
+const Notice: React.SFC = () => {
+    
     return (
         <Wrapper>
             <h4>HTML Reference</h4>

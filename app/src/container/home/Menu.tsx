@@ -3,14 +3,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container, IR } from '../../components/base/Base';
 import {ContNav} from '../../components/contents/nav'
-const Menu: React.SFC = () => {
-    const ir = new IR();
-    const Su = ir.SU;
-    
-    const Wrapper = styled.div`
-        background-color: #f6fdff;
-    `;
-    
+
+const ir = new IR();
+const Su = ir.SU;
+
+const Wrapper = styled.div`
+    background-color: #f6fdff;
+`;
+const Menu: React.SFC = () => {   
     return (
         <Wrapper id="Cont_Nav">
             <Container>

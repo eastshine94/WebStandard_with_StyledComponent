@@ -5,35 +5,39 @@ import { IR } from '../../../base/Base';
 
 const ir = new IR();
 const PM = ir.PM;
-const Notice1: React.SFC = () => {
-    const Wrapper = styled.div`
-        position: relative;
-        & h4{
-            font-size: 14px;
-            color: #0093bd; 
-            padding: 0 0 3px 0;
-            font-weight: bold;
-        }
-        & li{
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            background: url("https://user-images.githubusercontent.com/41350459/80065043-6bd45700-8574-11ea-8c34-b555d66bd1d1.gif") no-repeat 0 8px;
-            padding-left: 8px;
-            & a{
-                font-size: 12px;
+const Wrapper = styled.div`
+    position: relative;
+    & h4{
+        font-size: 14px;
+        color: #0093bd; 
+        padding: 0 0 3px 0;
+        font-weight: bold;
+    }
+    & li{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        background: url("https://user-images.githubusercontent.com/41350459/80065043-6bd45700-8574-11ea-8c34-b555d66bd1d1.gif") no-repeat 0 8px;
+        padding-left: 8px;
+        & a{
+            font-size: 12px;
+            &:hover {
+                color: #390;
             }
         }
-    `;
-    const More = styled.a`
-        position: absolute;
-        right: 0;
-        top: 0;
-        display: block;
-        background:url("https://user-images.githubusercontent.com/41350459/79749898-f8033600-834a-11ea-973e-989ebcba431f.png") no-repeat -150px -90px;
-        width: 17px;
-        height: 17px;
-    `;
+    }
+`;
+const More = styled.a`
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    background:url("https://user-images.githubusercontent.com/41350459/79749898-f8033600-834a-11ea-973e-989ebcba431f.png") no-repeat -150px -90px;
+    width: 17px;
+    height: 17px;
+`;
+const Notice1: React.SFC = () => {
+    
     return (
         <Wrapper>
             <h4>Web Publisher Notice</h4>
