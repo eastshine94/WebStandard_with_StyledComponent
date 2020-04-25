@@ -3,8 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container, IR } from '../../components/base/Base';
 import { BannerList } from '../../components/contents/banner';
-const ir = new IR();
-const PM = ir.PM;
+
+const PM = IR.PM;
 const Wrapper = styled.div`
     background-color: #dceff7;
 `;

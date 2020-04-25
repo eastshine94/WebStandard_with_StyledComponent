@@ -11,8 +11,8 @@ interface Props {
     description: string;
     children: React.ReactChild;
 }
-const ir = new IR();
-const PM = ir.PM;
+
+const PM = IR.PM;
 const Column = styled.div`
     width: 289px;
     height: 363px;

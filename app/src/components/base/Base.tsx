@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
       line-height: 1.5;
     }
     /* 폰트 스타일 초기화 */
-    em {
+    em, address {
       font-style: normal
     }
     /* 불릿 기호 초기화 */
@@ -29,41 +29,28 @@ export const GlobalStyle = createGlobalStyle`
       color: #222;
       font-weight: normal;
     }
+    /* 테두리 초기화 */
+    img, fieldset {
+      border: 0 none;
+    }
 `;
-export class IR {
+export const IR = {
   
   // 의미있는 이미지의 대체 텍스트를 제공하는 경우
-  PM = styled.span`
+  PM : styled.span`
     display: block; overflow: hidden; font-size: 0; line-height: 0; text-indent: -9999px;
-  `;
+  `,
   //의미있는 이미지의 대체 텍스트로 이미지가 없어도 대체 텍스트를 보여주고자 할 때
-  WA = styled.span`
+  WA : styled.span`
     display: block; overflow: hidden; position:relative; z-index: -1; width:100%; height:100%;
-  `;
+  `,
   // 대체 텍스트가 아닌 접근성을 위한 숨김 텍스트를 제공할 때
-  SU = styled.span`
+  SU : styled.span`
     overflow: hidden; position:absolute; width: 0; height: 0; line-height: 0; text-indent: -9999px;
-  `;
+  `,
 } 
 
 
-export const Wrap = styled.div`
-    width: 100%;
-`;
-
-/* Contents */
-export const Contents = styled.div`
-
-`;
-
-
-
-/* Footer */
-export const Footer = styled.div`
-
-    height: 200px;
-    background: #333;
-`;
 
 /* 컨테이너 */
 export const Container = styled.div`

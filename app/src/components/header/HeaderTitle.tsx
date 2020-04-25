@@ -27,7 +27,7 @@ const HeaderTitle: React.SFC = () => {
     return (
         <Title>
             <h1>Professional Publisher &amp; Designer</h1><br />
-            <a href="https://github.com/eastshine94">eastshine94.co.kr</a>
+            <a href="https://github.com/eastshine94">github.com/eastshine94</a>
         </Title>
     );
 }

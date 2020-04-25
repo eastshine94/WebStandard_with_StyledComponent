@@ -1,31 +1,31 @@
 /* eslint-disable react/jsx-pascal-case */
 import React, { Component } from 'react';
 import SkipMenu from '../components/skip/SkipMenu';
+import styled from 'styled-components';
 import {
-    GlobalStyle, Wrap, Container,
-    Contents, Footer, 
+    GlobalStyle
 } from '../components/base/Base';
-import { Header, Menu, Title, Banner, Notices } from '../container/home';
+import { Header, Menu, Title, Banner, Notices, Footer } from '../container/home';
+
+const Wrapper = styled.div`
+`;
+
 class Home extends Component {
     render() {
         return (
             <React.Fragment>
                 <GlobalStyle />
                 <SkipMenu/>
-                <Wrap>
+                <Wrapper>
                     <Header/>
-                    <Contents>
-                        <Menu/>
-                        <Title/>
-                        <Banner/>
-                        <Notices/>
-                    </Contents>
-
-                    <Footer>
-                        <Container>footer</Container>
-                    </Footer>
-
-                </Wrap>
+     
+                    <Menu/>
+                    <Title/>
+                    <Banner/>
+                    <Notices/>
+                 
+                    <Footer/>
+                </Wrapper>
             </React.Fragment>
         )
     }

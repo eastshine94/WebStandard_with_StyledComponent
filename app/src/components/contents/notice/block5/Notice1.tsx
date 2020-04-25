@@ -9,8 +9,8 @@ interface StyledProps {
     fontColor: string,
 }
 
-const ir = new IR();
-const SU = ir.SU;
+
+const SU = IR.SU;
 const Wrapper = styled.div.attrs((props: StyledProps) => ({
     active: false,
 }))`
@@ -69,7 +69,7 @@ const StyledList = styled.li.attrs((props: StyledProps) => ({
         }
     }
 `;
-const Notice: React.SFC = () => {
+const Notice1: React.SFC = () => {
 
     return (
         <Wrapper>
@@ -102,4 +102,4 @@ const Notice: React.SFC = () => {
 }
 
 
-export default Notice;
+export default Notice1;

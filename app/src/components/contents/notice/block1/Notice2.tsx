@@ -3,8 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { IR } from '../../../base/Base';
 
-const ir = new IR();
-const PM = ir.PM;
+
+const PM = IR.PM;
 const Wrapper = styled.div`
     position: relative;
     margin-top: 15px;

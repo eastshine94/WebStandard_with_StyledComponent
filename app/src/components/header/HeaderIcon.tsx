@@ -28,8 +28,8 @@ const Icon = styled.a.attrs((props: StyledProps) => ({
    background-position-x : -60px;
    }
 `;
-const ir = new IR();
-const PM = ir.PM;
+
+const PM = IR.PM;
 
 const HeaderIcon: React.SFC = () => {
     

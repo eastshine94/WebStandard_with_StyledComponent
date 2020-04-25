@@ -17,9 +17,9 @@ const HeaderMenu: React.SFC = () => {
     
     return (
         <Menu>
-            <a href='https'>Desiner</a>
+            <a href='https://github.com/eastshine94'>Designer</a>
             <a href='https://github.com/eastshine94'>Git</a>
-            <a href='https'>Youtube</a>
+            <a href='https://github.com/eastshine94'>Github</a>
         </Menu>
     );
 }

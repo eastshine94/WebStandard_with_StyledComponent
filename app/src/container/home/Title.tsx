@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container, IR } from '../../components/base/Base';
 
-const ir = new IR();
-const PM = ir.PM;
+
+const PM = IR.PM;
 const Wrapper = styled.div`
   background-color: #eaf7fd;
 `;

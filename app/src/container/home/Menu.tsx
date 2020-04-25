@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import { Container, IR } from '../../components/base/Base';
 import {ContNav} from '../../components/contents/nav'
 
-const ir = new IR();
-const Su = ir.SU;
+
+const Su = IR.SU;
 
 const Wrapper = styled.div`
     background-color: #f6fdff;

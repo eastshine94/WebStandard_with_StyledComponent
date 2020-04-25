@@ -3,8 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { IR } from '../../../base/Base';
 
-const ir = new IR();
-const SU = ir.SU;
+const SU = IR.SU;
 const Wrapper = styled.div`
     & ul{
         display: flex;
