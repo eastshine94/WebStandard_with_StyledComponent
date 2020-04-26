@@ -1,9 +1,29 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import styled from 'styled-components';
-const Nav = styled.div`
+import { inject, observer } from 'mobx-react';
+import { STORES } from '../../../constants';
+import BaseStore from '../../../stores/Base';
+
+interface StyledProps {
+    active: boolean;
+}
+
+interface InjectedProps{
+    [STORES.BASE_STORE]?: BaseStore;
+}
+
+const Nav = styled.div.attrs((props:StyledProps)=>({
+    active: props.active || false,
+    visibleHeight: props.active? "160px":"0",
+    visiblePadding: props.active? "30px 0":"0",
+}))`
+
+    height: ${props=>props.visibleHeight};
+    padding: ${props=>props.visiblePadding};
+    transition: height 0.6s ease, padding 0.6s ease;
     overflow:hidden;
-    padding: 30px 0;
+
     & > div {
         float: left;
         width: 40%;
@@ -32,11 +52,11 @@ const Nav = styled.div`
         }
     }       
 `;
-const ContNav: React.SFC = () => {
-    
 
+const ContNav: React.FC<InjectedProps> = (props) => {
+    const baseStore = props[STORES.BASE_STORE] as BaseStore;
     return (
-        <Nav>
+        <Nav active={baseStore.visibleMenu}>
             <div>
                 <h3>HTML Reference</h3>
                 <ol>
@@ -91,4 +111,4 @@ const ContNav: React.SFC = () => {
     )
 }
 
-export default ContNav;
+export default inject(STORES.BASE_STORE)(observer(ContNav));

@@ -51,7 +51,6 @@ export const IR = {
 } 
 
 
-
 /* 컨테이너 */
 export const Container = styled.div`
     width: 990px;
