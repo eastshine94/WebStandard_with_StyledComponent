@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React,{useState} from 'react';
+import React,{useState, MouseEvent} from 'react';
 import styled from 'styled-components';
 import { IR } from '../../../base/Base';
 
@@ -71,7 +71,8 @@ const StyledList = styled.li.attrs((props: StyledProps) => ({
 
 const Notice1: React.FC = () => {
     const [isselected, setSelected] = useState([true, false, false]);
-    const onChangeSelect = (index:number) => {
+    const onChangeSelect = (index:number, e?:MouseEvent) => {
+        e?.preventDefault();
         const newSelected= isselected.map((v, i) => i === index? true:false);
         setSelected(newSelected);
     }

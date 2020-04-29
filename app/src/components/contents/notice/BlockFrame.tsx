@@ -51,6 +51,7 @@ const IconDesc = styled.p`
     padding: 0 0 15px 70px;
     border-bottom: 1px solid #d0d0d0;
     margin-bottom: 15px;
+
 `;
 const BlockFrame: React.SFC<Props> = ({title, position, description, children}) => {
 

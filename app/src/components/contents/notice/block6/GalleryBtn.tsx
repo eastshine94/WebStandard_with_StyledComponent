@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
+
 import { IR } from '../../../base/Base';
 
 interface StyledProps {
@@ -22,26 +23,45 @@ const Btn = styled.div`
 const Icon = styled.li.attrs((props: StyledProps) => ({
     position: props.position || "0 0",
 }))`
-    & a{
+    & button{
         display: block;
         width: 23px;
         height: 23px;
         background: url("https://user-images.githubusercontent.com/41350459/79749898-f8033600-834a-11ea-973e-989ebcba431f.png") no-repeat;
         background-position: ${props => props.position};
         margin: 1px 2px;
+        border: 0px;
+        cursor: pointer;
         &:hover{
             background-position-x: -173px;
         }
     }
 `;
-const GalleryBtn: React.SFC = () => {
+const GalleryBtn: React.FC = () => {
+    const play = (e: MouseEvent) => {
+        e.preventDefault();
+        
+    }
+    const pause = (e: MouseEvent) => {
+        e.preventDefault();
+        
+    }
+    const prev = (e: MouseEvent) => {
+        e.preventDefault();
+        
+    }
+    const next = (e: MouseEvent) => {
+        e.preventDefault();
+        
+    }
+
     return (
         <Btn>
             <ul>
-                <Icon position="-150px -120px"><a href="#"><PM>시작</PM></a></Icon>
-                <Icon position="-150px -143px"><a href="#"><PM>정지</PM></a></Icon>
-                <Icon position="-150px -166px"><a href="#"><PM>이전이미지</PM></a></Icon>
-                <Icon position="-150px -189px"><a href="#"><PM>다음이미지</PM></a></Icon>
+                <Icon position="-150px -120px"><button onClick={play}><PM>시작</PM></button></Icon>
+                <Icon position="-150px -143px"><button onClick={pause}><PM>정지</PM></button></Icon>
+                <Icon position="-150px -166px"><button onClick={prev}><PM>이전이미지</PM></button></Icon>
+                <Icon position="-150px -189px"><button onClick={next}><PM>다음이미지</PM></button></Icon>
             </ul>
         </Btn>
     );

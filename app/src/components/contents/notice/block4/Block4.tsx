@@ -5,7 +5,7 @@ import { Notice1, Notice2 } from './';
 const Block4: React.SFC = () => {
 
     return (
-        <BlockFrame title="Notice" description="가장 웹 페이지에서 기본이 되는 게시판 유형입니다." position="0 -420px">
+        <BlockFrame title="Notice" description="이미지에 마우스를 올리면 바로가기가 나옵니다." position="0 -420px">
             <React.Fragment>
                 <Notice1/>
                 <Notice2/>

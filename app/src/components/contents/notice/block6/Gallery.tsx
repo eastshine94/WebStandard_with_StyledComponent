@@ -18,10 +18,12 @@ const Wrapper = styled.div`
     }
 `;
 
+
+
 const Gallery: React.SFC = () => {
     return (
         <Wrapper>
-            <h4>포트폴리오</h4>
+            <h4>갤러리</h4>
             <GalleryBtn/>
             <GalleryImg/>
         </Wrapper>
