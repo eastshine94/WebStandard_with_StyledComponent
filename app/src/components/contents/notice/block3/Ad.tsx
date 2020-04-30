@@ -1,6 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { MouseEvent, useState } from 'react';
 import styled from 'styled-components';
+import { inject, observer } from 'mobx-react';
+import { STORES } from '../../../../constants'
+import BaseStore from '../../../../stores/Base';
+import WindowPopup from '../../../popup/WindowPopup';
+
+interface InjectedProps {
+    [STORES.BASE_STORE]?: BaseStore;
+}
 
 const Wrapper = styled.div`
     margin-top: 15px;
@@ -25,18 +33,33 @@ const Wrapper = styled.div`
     }
 `;
 
-const Ad: React.SFC = () => {
+const Ad: React.FC<InjectedProps> = (props) => {
+    const baseStore = props[STORES.BASE_STORE] as BaseStore;
+    const [openWindowPopup, setopenWindowPopup]:[boolean, Function] = useState(false);
+    const WP = openWindowPopup? <WindowPopup/> : "";
+
+    const onLayerPopup = (e:MouseEvent) => {
+        e.preventDefault();
+        baseStore.setVisibleLayerPopup(true);
+    }
+    const onWindowPopup = (e:MouseEvent) => {
+        e.preventDefault();
+        setopenWindowPopup(true);
+        setTimeout(() => {
+            setopenWindowPopup(false);
+        },5000);
+    }
     return (
         <Wrapper>
             <h4>Advertisement</h4>
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="#" onClick={onLayerPopup}>
                         <img src="https://user-images.githubusercontent.com/41350459/80281454-3e3f0780-8746-11ea-82e3-d63acab154db.jpg" alt="이미지1" />
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" onClick={onWindowPopup}>
                         <img src="https://user-images.githubusercontent.com/41350459/80281455-3f703480-8746-11ea-846a-3d3f2bbf6ed9.jpg" alt="이미지2" />
                     </a>
                 </li>
@@ -46,9 +69,10 @@ const Ad: React.SFC = () => {
                     </a>
                 </li>
             </ul>
-
+            {WP}
         </Wrapper>
+        
     );
 }
 
-export default Ad;
+export default inject(STORES.BASE_STORE)(observer(Ad));;

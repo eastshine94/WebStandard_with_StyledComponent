@@ -2,6 +2,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import Slider, { Settings } from 'react-slick';
+import { STORES } from '../../../../constants';
+import SliderStore from '../../../../stores/Slider/index';
+import { inject, observer } from 'mobx-react';
+
+interface InjectedProps {
+    [STORES.SLIDER_STORE]?: SliderStore;
+}
 
 const Img = styled.div`
     & .slick-track {
@@ -13,18 +20,22 @@ const Img = styled.div`
     }
 `;
 
-const GalleryImg: React.FC = () => {
+const GalleryImg: React.FC<InjectedProps> = (props) => {
+    
+    const sliderStore = props[STORES.SLIDER_STORE] as SliderStore;
     const settings: Settings = {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
+        autoplay:true,
+        autoplaySpeed:2000,
     }
 
     return (
         <Img>
-            <Slider ref={slider => console.log(slider)} {...settings}>
+            <Slider ref={slider => sliderStore.setSlider(slider)} {...settings}>
                 <div><a href="#"><img src="https://user-images.githubusercontent.com/41350459/80274347-9c52f700-8714-11ea-940f-d8e7e4258933.jpg" alt="갤러리1" /></a></div>
                 <div><a href="#"><img src="https://user-images.githubusercontent.com/41350459/80274349-9d842400-8714-11ea-9f0e-156ef6a8b135.jpg" alt="갤러리2" /></a></div>
                 <div><a href="#"><img src="https://user-images.githubusercontent.com/41350459/80274350-9f4de780-8714-11ea-86de-d5fd2cbacb2c.jpg" alt="갤러리3" /></a></div>
@@ -35,4 +46,4 @@ const GalleryImg: React.FC = () => {
     );
 }
 
-export default GalleryImg;
+export default inject(STORES.SLIDER_STORE)(observer(GalleryImg));

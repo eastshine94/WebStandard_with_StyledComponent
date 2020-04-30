@@ -1,8 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
-
 import { IR } from '../../../base/Base';
+import { STORES } from '../../../../constants';
+import SliderStore from '../../../../stores/Slider/index';
+import { inject, observer } from 'mobx-react';
+
+interface InjectedProps {
+    [STORES.SLIDER_STORE]?: SliderStore;
+}
 
 interface StyledProps {
     position: string;
@@ -37,22 +43,23 @@ const Icon = styled.li.attrs((props: StyledProps) => ({
         }
     }
 `;
-const GalleryBtn: React.FC = () => {
+const GalleryBtn: React.FC<InjectedProps> = (props) => {
+    const sliderStore = props[STORES.SLIDER_STORE] as SliderStore;
     const play = (e: MouseEvent) => {
         e.preventDefault();
-        
+        sliderStore.play();       
     }
     const pause = (e: MouseEvent) => {
         e.preventDefault();
-        
+        sliderStore.pause();
     }
     const prev = (e: MouseEvent) => {
         e.preventDefault();
-        
+        sliderStore.prev();
     }
     const next = (e: MouseEvent) => {
         e.preventDefault();
-        
+        sliderStore.next();
     }
 
     return (
@@ -67,4 +74,4 @@ const GalleryBtn: React.FC = () => {
     );
 }
 
-export default GalleryBtn;
+export default inject(STORES.SLIDER_STORE)(observer(GalleryBtn));

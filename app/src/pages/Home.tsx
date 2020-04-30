@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-pascal-case */
 import React, { Component } from 'react';
 import SkipMenu from '../components/skip/SkipMenu';
+import { LayerPopup} from '../components/popup';
 import styled from 'styled-components';
 import {
     GlobalStyle
@@ -16,16 +17,17 @@ class Home extends Component {
             <React.Fragment>
                 <GlobalStyle />
                 <SkipMenu/>
+                
                 <Wrapper>
                     <Header/>
-     
                     <Menu/>
                     <Title/>
                     <Banner/>
                     <Notices/>
-                 
                     <Footer/>
                 </Wrapper>
+
+                <LayerPopup/>
             </React.Fragment>
         )
     }
