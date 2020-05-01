@@ -3,7 +3,7 @@ import {observable, action} from 'mobx';
 export default class BaseStore {
     @observable visibleMenu: boolean = false;
     @observable visibleLayerPopup: boolean = false;
-    @observable visibleWindowPopup: boolean = false;
+    @observable visibleLightBox: boolean = false;
     
     @action
     setVisibleMenu = (visible: boolean) => {
@@ -15,7 +15,7 @@ export default class BaseStore {
     }
 
     @action
-    setVisibleLWindowPopup = (visible: boolean) => {
-        this.visibleWindowPopup = visible;
+    setVisibleLightBox = (visible: boolean) => {
+        this.visibleLightBox = visible;
     }  
 }

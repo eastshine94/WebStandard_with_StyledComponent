@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-pascal-case */
 import React, { Component } from 'react';
 import SkipMenu from '../components/skip/SkipMenu';
-import { LayerPopup} from '../components/popup';
+import { LayerPopup, LightBoxs} from '../components/popup';
 import styled from 'styled-components';
 import {
     GlobalStyle
@@ -28,6 +28,7 @@ class Home extends Component {
                 </Wrapper>
 
                 <LayerPopup/>
+                <LightBoxs/>
             </React.Fragment>
         )
     }

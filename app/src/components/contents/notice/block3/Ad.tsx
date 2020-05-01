@@ -42,6 +42,12 @@ const Ad: React.FC<InjectedProps> = (props) => {
         e.preventDefault();
         baseStore.setVisibleLayerPopup(true);
     }
+
+    const onLightBox = (e:MouseEvent) => {
+        e.preventDefault();
+        baseStore.setVisibleLightBox(true);
+    }
+
     const onWindowPopup = (e:MouseEvent) => {
         e.preventDefault();
         setopenWindowPopup(true);
@@ -49,6 +55,7 @@ const Ad: React.FC<InjectedProps> = (props) => {
             setopenWindowPopup(false);
         },5000);
     }
+    
     return (
         <Wrapper>
             <h4>Advertisement</h4>
@@ -64,7 +71,7 @@ const Ad: React.FC<InjectedProps> = (props) => {
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" onClick={onLightBox}>
                         <img src="https://user-images.githubusercontent.com/41350459/80281456-40a16180-8746-11ea-82e9-0a57e678da37.jpg" alt="이미지3" />
                     </a>
                 </li>
@@ -75,4 +82,4 @@ const Ad: React.FC<InjectedProps> = (props) => {
     );
 }
 
-export default inject(STORES.BASE_STORE)(observer(Ad));;
+export default inject(STORES.BASE_STORE)(observer(Ad));

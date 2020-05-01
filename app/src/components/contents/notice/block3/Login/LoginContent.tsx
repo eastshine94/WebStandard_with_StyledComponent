@@ -32,12 +32,12 @@ const LoginContent: React.SFC = () => {
             <div className="lc_text">
                 <label>
                     <SU>아이디</SU>
-                    <input type="text" id="uid" name="uid" className= "input_text" maxLength= {20}/>
+                    <input type="text" id="uid" name="uid" className= "input_text" maxLength= {20} placeholder="아이디"/>
                 </label>
                 
                 <label>
                     <SU>비밀번호</SU>
-                    <input type="password" id="upw" name="upw" className= "input_text" maxLength= {20}/>
+                    <input type="password" id="upw" name="upw" className= "input_text" maxLength= {20} placeholder="비밀번호"/>
                 </label>
                 
                 <button className="lc_btn" type="submit">로그인</button>
